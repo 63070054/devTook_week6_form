@@ -1,0 +1,26 @@
+pipeline {
+   agent any
+    stages {
+         stage('pre -build') {
+            steps {
+                sh 'echo Pre-build'
+            }
+        }
+        stage('first build') {
+            steps {
+                
+                sh 'echo build in progress'
+            }
+        }
+        stage('second build') {
+            steps {
+               sh 'python3  Webhook/main.py'
+            }
+        }
+        stage('build success') {
+            steps {
+               sh 'echo Build Success'
+            }
+        }
+    }
+}
